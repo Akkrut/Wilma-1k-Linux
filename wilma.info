@@ -1,0 +1,100 @@
+.----------------------------------------------------------------------------.
+|                                                                            |
+|        .d8b.   d888888b   .d8b.   d8888b.          Probably   .----.       |
+|       d8' `8b  `~~88~~'  d8' `8b  88  `8D                  .-' .--. `-.    |
+|       88ooo88     88     88ooo88  88oodD'            w0Rm /  /     \  \  H |
+|       88~~~88     88     88~~~88  88~~~                   \  \.   ./  /  0 |
+|       88   88     88     88   88  88                       `-.`--'.-'    L |
+|       YP   YP     YP     YP   YP  88                          `----'     E |
+|                                                                   Only!  S |
+|             A k k r u t  tyrmaa  A k k r u t  Productions                  |
+|                                                                            |
+|                   -=[ P R O U D L Y   P R E S E N T S ]=-                  |
+|                                                                            |
+|----------------------------------------------------------------------------|
+|                                                               |            |
+|  R E L E A S E   I N F O                                      +--[01]      |
+|                                                               |            |
+|  Title .......: Koetimpa lukea wilmaviestit!                  |            |
+|  Short .......: wilma                                         |            |
+|  Type ........: demo/Assembly 2026 Summer                     |            |
+|  Platform ....: Linux i386, raw framebuffer or                |            | 
+|                 SDL2-emulated framebuffer                     |            |
+|  Release Date : 2026.07.30                                    |            |
+|  Screen ......: 1024x768x32 BGRX                              |            |
+|  Sound .......: 8-bit unsigned PCM to /bin/aplay              |            |
+|                 I suck on this, thanks Internet for sharing   |            |
+|                 Based on rrola/ryg bytebeat                   |            |
+|  Exit ........: ESC at anytime or                             |            |
+|                 90 Seonds when the joke expires               |            |
+|  Language ....: C w/ ASM stub                                 |            |
+|  File Size ...: 1024b                                         |            |
+|                                                               |            |
+|---------------------------------------------------------------+------------|
+|                                                               |            |
+|  D E S C R I P T I O N                                        +--[02]      |
+|                                                               |            |
+|  A 1024 byte Linux demo thingy about (new) school fu"kedup    |            |
+|  message system. Reissuvihko takaisin! This is the            |            |
+|  story about losing all your hope and remaining optimism.     |            |
+|  System always wins, Systeemi on jarjestelma!                 |            |
+|                                                               |            |
+|  Static 32 bit ELF; No libc, no dynamic linker, no assests,   |            |
+|  no apology .. no hope? Black terminal with /dev/fb0 or       |            |
+|  /tmp/fb0 for lazy ppl. Pixesl coocked on CPU, bytebeat       |            |
+|  to aplay and pwrites64s optimism into the nearest void       |            |
+|                                                               |            |
+|---------------------------------------------------------------+------------|
+|  AtAP - C0py pasting code since 2008.                       [2026] AtAP    |
+|         We keep doing it because we can!                                   |
+|                                                                            |
+|  nfo by AtAP :: Akkrut tyrmaa Akkrut Productions                           |
+'---------------------------------------------------------------+------------'
+
+Common reqs, because computers demand tribute:
+
+    Linux x86 or x86_64 with 32-bit ELF support
+    alsa-utils, /bin/aplay is the band
+    SDL2 runtime for framebuffer-emulator
+
+The release contains two 1K demo binaries:
+
+    wilma-emulator  writes /tmp/fb0 for the included framebuffer-emulator
+    wilma-nativefb  writes a real /dev/fb0
+
+Party-safe desktop route (recommended):
+
+    ./framebuffer-emulator --demo ./wilma-emulator
+
+Native framebuffer tribute:
+
+    ./wilma-nativefb
+
+The native version needs a 1024x768x32 framebuffer. Put something like
+this in /etc/default/grub:
+
+    GRUB_CMDLINE_LINUX_DEFAULT="video=1024x768-32"
+
+Source lives in src/ for the 1K creature and fbe/ for its SDL2 terrarium.
+Convenient source rituals:
+
+    cd src
+    make release
+    make run-emulator
+    make run-emulator FBE_ARGS="--display 1"
+    make run-emulator FBE_ARGS="--windowed"
+    make run-native
+
+Build tribute (debnish):
+
+    dpkg --add-architecture i386
+    apt update
+    apt install make nasm gcc-multilib binutils python3 libc6:i386 libc6-dev-i386 libsdl2-dev alsa-utils
+
+If the terminal becomes modern art, type reset blindly and press Enter.
+
+AI (Aino-Inkeri) Disklamer:
+
+    GCC optimization
+    Rubberduck & Explaining
+    ELF striping
